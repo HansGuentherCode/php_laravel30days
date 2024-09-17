@@ -1,0 +1,154 @@
+{	
+	// Interface
+	"workbench.colorTheme": "Visual Studio 2017 Dark - C++",
+	"explorer.excludeGitIgnore": true,
+	"files.exclude": 
+		{
+		"*.4coder": true,
+		"4coder": true,
+		"data": true,
+		".gitattributes": true,
+		".gitignore": true,
+		"bin": true,
+		"libraries": true
+		},
+	"xmlTools.enforcePrettySelfClosingTagOnFormat": true,
+	"terminal.integrated.shell.windows": "c:/Program Files/PowerShell/7/pwsh.exe",
+	"terminal.integrated.fontFamily": "Cascadia Mono PL",
+	"terminal.integrated.fontWeight": "1",
+	"breadcrumbs.enabled": false,
+	"window.commandCenter": false,
+	"workbench.layoutControl.enabled": false,
+	//"workbench.editor.showTabs": "single",
+	"workbench.colorCustomizations": {
+		"editorCursor.foreground": "#ababab",
+		"editor.lineHighlightBackground": "#3a3a3a8a",
+		
+		"editor.selectionBackground": "#ffffff27",
+		//"editor.selectionForeground": "#ffffff", Not working
+		"editor.selectionHighlightBackground": "#ff950037",
+		"editor.wordHighlightBackground": "#00000000",
+		"editor.hoverHighlightBackground": "#ffffff00",
+		"editor.findMatchBackground": "#00cc03a8", //Current SEARCH MATCH
+        "editor.findMatchHighlightBackground": "#ff7b00a1", //Other SEARCH MATCHES
+	},
+	"workbench.statusBar.visible": true,
+	"window.zoomLevel": 0,
+	
+	// C/C++ stuff
+	"C_Cpp.clang_format_style": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0, NamespaceIndentation: All}",
+	"C_Cpp.vcFormat.newLine.beforeOpenBrace.block": "newLine",
+	"C_Cpp.vcFormat.newLine.beforeOpenBrace.type": "newLine",
+	"C_Cpp.vcFormat.newLine.beforeOpenBrace.function": "newLine",
+	//"C_Cpp.vcFormat.AlignAfterOpenBracket": "align",
+	"C_Cpp.vcFormat.space.pointerReferenceAlignment": "left",
+	"C_Cpp.clang_format_sortIncludes": false,
+	"C_Cpp.vcFormat.indent.namespaceContents": true,
+	"C_Cpp.vcFormat.indent.": true,
+	
+	// Basic editor stuff
+	"editor.minimap.enabled": false,
+	"editor.fontFamily": "Liberation Mono",
+	"editor.fontSize": 14,
+	"editor.fontWeight": "1",
+	"editor.trimAutoWhitespace": false,
+	"editor.insertSpaces": false,
+	"editor.tabSize": 4,
+	"editor.detectIndentation": false,
+	"editor.autoIndent": "keep",
+	"editor.autoClosingBrackets": "never",
+	"editor.autoClosingComments": "never",
+	"editor.autoClosingQuotes": "never",
+	"editor.autoSurround": "never",
+	"editor.lineNumbers": "off",
+	"editor.cursorStyle": "line",
+	"editor.hover.delay": 0,
+	"editor.hover.sticky": false,
+	"editor.hover.enabled": false,
+	"editor.bracketPairColorization.enabled": true,
+	// Autocompletion:
+	"editor.snippetSuggestions": "none",
+	"editor.quickSuggestions": 
+		{
+		"strings": false,
+		"comments": false,
+		"other": false
+		},
+	"editor.acceptSuggestionOnCommitCharacter": false,
+	"editor.acceptSuggestionOnEnter": "on",
+	"editor.tabCompletion": "off",
+	"editor.quickSuggestionsDelay": 1000,
+	"editor.dragAndDrop": false,
+	
+	//"debug.console.closeOnEnd": true,
+	//"debug.openDebug": "neverOpen",
+	// TODO highlight
+	"todohighlight.isEnable": true,
+	"todohighlight.keywords":
+		[
+			{
+			"text": "TODO",
+			"color": "red",
+			"backgroundColor": "rgba(0,0,0,0)"
+			},
+			{
+			"text": "HACK",
+			"color": "#ff6600",
+			"backgroundColor": "rgba(0,0,0,0)"
+			},
+			{
+			"text": "NOTE",
+			"color": "green",
+			"backgroundColor": "rgba(0,0,0,0)"
+			},
+			{
+			"text": "Assert",
+			"color": "orange",
+			"backgroundColor": "rgba(0,0,0,0)"
+			}
+		],
+	"todohighlight.defaultStyle": 
+		{
+		"color": "red",
+		"backgroundColor": "#ffab00",
+		"overviewRulerColor": "rgba(0,0,0,0)",
+		"isWholeLine": false,
+		},
+	
+	// Misc
+	"files.associations": 
+		{
+			"test.h": "c",
+			"vulkan.h": "c",
+			"vulkan_core.h": "c",
+			"vk_platform.h": "c",
+			"type_traits": "c",
+			"typeinfo": "c",
+			"windowsx.h": "c",
+			"vulkan_platform.h": "c",
+			"renderer_frontend.h": "c",
+			"iosfwd": "c",
+			"platform.h": "c",
+			"logger.h": "c",
+			"game_types.h": "c",
+			"application.h": "c",
+			"stdio.h": "c",
+			"cmath": "c",
+			"defines.h": "c",
+			"clock.h": "c",
+			"hgmemory.h": "c",
+			"event.h": "c",
+			"input.h": "c",
+			"xstring": "cpp",
+			"utility": "c"
+		},
+	// Web stuff
+	"javascript.autoClosingTags": false,
+  	"typescript.autoClosingTags": false,
+  	"html.autoClosingTags": false,
+	"html.autoCreateQuotes": false,
+	"php.validate.enable": true,
+	"php.suggest.basic": false,
+	"php.validate.executablePath": "c:/php/php.exe",
+	
+}

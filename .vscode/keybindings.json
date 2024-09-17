@@ -1,0 +1,112 @@
+[
+	// Save all by default
+	{
+	"key": "ctrl+s",
+	"command": "workbench.action.files.saveAll"
+	},
+	{ // Fix tab autocompletion
+	"key"    : "tab",
+	"command": "-acceptSelectedSuggestion",
+	"when"   : "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
+	},
+	/*{ // Fix enter autocompletion
+	"key"    : "enter",
+	"command": "-acceptSelectedSuggestion",
+	"when"   : "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"	
+	},*/
+	{ // Sets autocompletion confirmation to ctrl-enter
+	"key"    : "ctrl+enter",
+	"command": "acceptSelectedSuggestion",
+	"when"   : "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"	
+	},
+	{ // Makes ctrl+d work like in game maker.
+	"key": "ctrl+d",
+	"command": "editor.action.copyLinesDownAction",
+	"when": "editorTextFocus && !editorReadonly"
+	},
+	{ // Removes default vscode shortcut for the above.
+	"key": "shift+alt+down",
+	"command": "-editor.action.copyLinesDownAction",
+	"when": "editorTextFocus && !editorReadonly"
+	},
+    { // Fold regions
+	"key": "ctrl+m",
+	"command": "editor.foldAll",
+	"when": "editorTextFocus && foldingEnabled"
+    },
+    { // Unfold regions
+	"key": "ctrl+m",
+	"command": "editor.unfoldAll",
+	"when": "editorTextFocus && foldingEnabled"
+    },
+	{
+	"key": "ctrl+shift+down",
+	"command": "cursorMove",
+	"when": "editorTextFocus",
+	"args": { "to": "nextBlankLine", "select": true }
+    },
+    {
+	"key": "ctrl+shift+up",
+	"command": "cursorMove",
+	"when": "editorTextFocus",
+	"args": { "to": "prevBlankLine", "select": true }
+    },
+	{
+	"key": "ctrl+down",
+	"command": "cursorMove",
+	"when": "editorTextFocus",
+	"args": { "to": "nextBlankLine", "select": false }
+    },
+    {
+	"key": "ctrl+up",
+	"command": "cursorMove",
+	"when": "editorTextFocus",
+	"args": { "to": "prevBlankLine", "select": false }
+    },
+// TOGGLE UI PANELS BEGIN
+	{
+	"key": "`",                // whatever keybinding you want 
+	"command": "runCommands",
+	"args": 
+		{
+		"commands": 
+			[
+			"workbench.action.togglePanel",
+			"workbench.action.toggleSidebarVisibility",
+			"workbench.action.focusActiveEditorGroup"    // this works fine for me
+			]
+		}
+	},
+	{
+	"key": "`",
+	"command": "workbench.action.toggleSidebarVisibility",
+	"when": "sideBarVisible && !panelVisible"
+	},
+	{
+	"key": "`",
+	"command": "workbench.action.togglePanel",
+	"when": "panelVisible && !sideBarVisible"
+	},
+/* NOTE(HG): Does not restore focus to editor!
+	{
+	"key": "`",
+	"command": "workbench.action.focusActiveEditorGroup",
+	"when": "!editorTextFocus"
+	},
+*/
+// TOGGLE UI PANELS END
+	
+	{
+	"key": "f1",
+    "command": "workbench.action.tasks.runTask",
+    "args": "Build Everything"
+	},
+	{
+	"key": "f6",
+	"command": "workbench.action.debug.start"
+	},
+	{
+	"key": "f5",
+	"command": "workbench.action.debug.run"
+	}
+]
