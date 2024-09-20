@@ -4,54 +4,11 @@
  *	Routes take a url input, and return something something else.
  *	This could be a file, or even a string.
  */
-use Illuminate\Support\Arr;
+use App\Http\Controllers\JobController;
 use Illuminate\Support\Facades\Route;
-use App\Models\Job;
 
-Route::get('/', function () {
-	$jobs = Job::all();
-	
-	dd($jobs);
-	
-    return view('home');
-});
-
-Route::get('/jobs', function() {
-	$jobs = Job::with('employer')->latest()->simplePaginate(3);
-	
-    return view('jobs.index', ['jobs' => $jobs]);
-});
-
-Route::get('/jobs/create', function() {
-	return view('jobs.create');
-});
-
-Route::get('/jobs/{id}', function($id) {
-	$job = Job::find($id);
-	return view('jobs.show', ['job' => $job]);
-});
-
-Route::get('/about', function() {
-	return view('about');
-});
-
-Route::post('/jobs', function() {
-	request()->validate([
-		'title' => ['required', 'min:3'],
-		'salary' => ['required']
-	]);
-
-	Job::create([
-		'title' => request('title'),
-		'salary' => request('salary'),
-		'employer_id' => 1,
-	]);
-	
-	return (redirect('/jobs'));
-});
-
-Route::get('/contact', function() {
-	return view('contact');
-});
-
-
+// Main
+Route::view('/', 'home');
+Route::view('/about', 'about');
+Route::view('/contact', 'contact');
+Route::resource('jobs', JobController::class);
