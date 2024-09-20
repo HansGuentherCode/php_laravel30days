@@ -1,6 +1,6 @@
 {	
 	// Interface
-	"workbench.colorTheme": "Visual Studio 2017 Dark - C++",
+	"workbench.colorTheme": "Default Dark+",
 	"explorer.excludeGitIgnore": true,
 	"files.exclude": 
 		{
@@ -148,7 +148,7 @@
   	"html.autoClosingTags": false,
 	"html.autoCreateQuotes": false,
 	"php.validate.enable": true,
-	"php.suggest.basic": false,
-	"php.validate.executablePath": "c:/php/php.exe",
-	
+	"php.suggest.basic": true,
+	"php.validate.executablePath": "C:\\Users\\hguenther\\.config\\herd\\bin\\php83\\php.exe",
+	"php.validate.run": "onType",
 }

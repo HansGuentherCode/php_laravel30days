@@ -6,62 +6,48 @@
  */
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Route;
+use App\Models\Job;
 
 Route::get('/', function () {
+	$jobs = Job::all();
+	
+	dd($jobs);
+	
     return view('home');
 });
 
-Route::get('jobs', function() {
-    return view('jobs',
-		[
-		'jobs' =>
-			[
-				[
-				'id' => 0,
-				'title' => 'Director',
-				'salary' => '$50,000'
-				],
-				[
-				'id' => 1,
-				'title' => 'Programmer',
-				'salary' => '$10,000'
-				],
-				[
-				'id' => 2,
-				'title' => 'Teacher',
-				'salary' => '$40,000'
-				]
-			]
-		]
-	);
+Route::get('/jobs', function() {
+	$jobs = Job::with('employer')->latest()->simplePaginate(3);
+	
+    return view('jobs.index', ['jobs' => $jobs]);
+});
+
+Route::get('/jobs/create', function() {
+	return view('jobs.create');
 });
 
 Route::get('/jobs/{id}', function($id) {
-	$jobs = [
-		[
-		'id' => 0,
-		'title' => 'Director',
-		'salary' => '$50,000'
-		],
-		[
-		'id' => 1,
-		'title' => 'Programmer',
-		'salary' => '$10,000'
-		],
-		[
-		'id' => 2,
-		'title' => 'Teacher',
-		'salary' => '$40,000'
-		]
-	];
-
-	$job = Arr::first($jobs, fn($job) => $job['id'] == $id);
-	
-	return view('job', ['job' => $job]);
+	$job = Job::find($id);
+	return view('jobs.show', ['job' => $job]);
 });
 
 Route::get('/about', function() {
 	return view('about');
+});
+
+Route::post('/jobs', function() {
+	request()->validate([
+		'title' => ['required', 'min:3'],
+		'salary' => ['required']
+	]);
+
+	Job::create([
+		'title' => request('title'),
+		'salary' => request('salary'),
+		'employer_id' => 1,
+	]);
+	
+	return (redirect('/jobs'));
 });
 
 Route::get('/contact', function() {
