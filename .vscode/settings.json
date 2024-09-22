@@ -1,7 +1,7 @@
 {	
 	// Interface
 	"workbench.colorTheme": "Default Dark+",
-	"explorer.excludeGitIgnore": true,
+	"explorer.excludeGitIgnore": false,
 	"files.exclude": 
 		{
 		"*.4coder": true,
