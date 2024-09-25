@@ -7,7 +7,13 @@ export default defineConfig({
         laravel(
 		{
             input: ['resources/css/app.css', 'resources/js/app.js'],
-            refresh: true,
+            refresh: true
         })
-    ]
+    ],
+    server: {
+        host: 'php_laravel30days.test',
+        watch: {
+            usePolling: true,
+        },
+    },
 });
